@@ -50,7 +50,9 @@ return array(
 	 * Note that this is less secure, as session hijacking countermeasures have to
 	 * be disabled for this to work!
 	 */
-	'multiple_logins' => false,
+
+	//Set to true Justin Smith 7/24/13
+	'multiple_logins' => true,
 
 	/**
 	 * Remember-me functionality
