@@ -1,0 +1,19 @@
+.error{
+	color:red;
+}
+
+@media print{
+
+	.navbar{
+		display:none;
+	}
+	.fc-button{
+		display:none;
+	}
+	.btn{
+		display:none;
+	}
+	.filter{
+		display:none;
+	}
+}
