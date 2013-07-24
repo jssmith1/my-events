@@ -81,6 +81,7 @@
 
 <?php endif; ?>
 
+<div>
 <p style="float:left">
 	<?php echo Html::anchor('admin/events/create', 'Add new Event', array('class' => 'btn btn-success')); ?>
 </p>
@@ -119,9 +120,10 @@ $employees = Model_Employee::find('all');
 			</div>
 </div>
 </div>
+</div>
 
 <?php echo Form::close(); ?>
 
-<div id='calendar'></div>
+<div id='calendar' style="clear:both"></div>
 
 <br>
