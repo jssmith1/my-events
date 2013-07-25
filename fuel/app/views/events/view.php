@@ -1,4 +1,4 @@
-<h2><?php echo $event->title; ?>
+<?php echo $event->title; ?>
 <?php if($event->association){
 	echo " - ($event->association)";
 }?>
@@ -51,7 +51,7 @@
 </div>
 </br>
 <div style="clear:both; margin-top: 50px">
-<?php echo Html::anchor('admin/events/edit/'.$event->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/events/delete/'.$event->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?> |
-<?php echo Html::anchor('admin/events', 'Back'); ?>
+<?php echo Html::anchor('events/edit/'.$event->id, 'Edit'); ?> |
+<?php echo Html::anchor('events/delete/'.$event->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?> |
+<?php echo Html::anchor('events', 'Back'); ?>
 </div>

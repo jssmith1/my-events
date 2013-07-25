@@ -1,26 +1,26 @@
 <?php
-class Controller_Admin_Employees extends Controller_Admin{
+class Controller_Employees extends Controller_Admin{
 
 	public function action_index()
 	{
 		$data['employees'] = Model_Employee::find('all');
 		$this->template->title = "Employees";
-		$this->template->content = View::forge('admin\employees/index', $data);
+		$this->template->content = View::forge('employees/index', $data);
 
 	}
 
 	public function action_view($id = null)
 	{
-		is_null($id) and Response::redirect('admin/employees');
+		is_null($id) and Response::redirect('employees');
 
 		if ( ! $data['employee'] = Model_Employee::find($id))
 		{
 			Session::set_flash('error', 'Could not find employee #'.$id);
-			Response::redirect('admin/employees');
+			Response::redirect('employees');
 		}
 
 		$this->template->title = "Employee";
-		$this->template->content = View::forge('admin\employees/view', $data);
+		$this->template->content = View::forge('employees/view', $data);
 
 	}
 
@@ -41,7 +41,7 @@ class Controller_Admin_Employees extends Controller_Admin{
 				{
 					Session::set_flash('success', 'Added employee #'.$employee->id.'.');
 
-					Response::redirect('admin/employees');
+					Response::redirect('employees');
 				}
 
 				else
@@ -56,18 +56,18 @@ class Controller_Admin_Employees extends Controller_Admin{
 		}
 
 		$this->template->title = "Employees";
-		$this->template->content = View::forge('admin\employees/create');
+		$this->template->content = View::forge('employees/create');
 
 	}
 
 	public function action_edit($id = null)
 	{
-		is_null($id) and Response::redirect('admin/employees');
+		is_null($id) and Response::redirect('employees');
 
 		if ( ! $employee = Model_Employee::find($id))
 		{
 			Session::set_flash('error', 'Could not find employee #'.$id);
-			Response::redirect('admin/employees');
+			Response::redirect('employees');
 		}
 
 		$val = Model_Employee::validate('edit');
@@ -81,7 +81,7 @@ class Controller_Admin_Employees extends Controller_Admin{
 			{
 				Session::set_flash('success', 'Updated employee #' . $id);
 
-				Response::redirect('admin/employees');
+				Response::redirect('employees');
 			}
 
 			else
@@ -104,13 +104,13 @@ class Controller_Admin_Employees extends Controller_Admin{
 		}
 
 		$this->template->title = "Employees";
-		$this->template->content = View::forge('admin\employees/edit');
+		$this->template->content = View::forge('employees/edit');
 
 	}
 
 	public function action_delete($id = null)
 	{
-		is_null($id) and Response::redirect('admin/employees');
+		is_null($id) and Response::redirect('employees');
 
 		if ($employee = Model_Employee::find($id, array('related' => array('employeeEventLink'))))
 		{
@@ -124,7 +124,7 @@ class Controller_Admin_Employees extends Controller_Admin{
 			Session::set_flash('error', 'Could not delete employee #'.$id);
 		}
 
-		Response::redirect('admin/employees');
+		Response::redirect('employees');
 
 	}
 

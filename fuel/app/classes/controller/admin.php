@@ -2,7 +2,7 @@
 
 class Controller_Admin extends Controller_Base
 {
-	public $template = 'admin/template';
+	public $template = 'template';
 
 	public function before()
 	{
@@ -21,7 +21,7 @@ class Controller_Admin extends Controller_Base
 			}
 			else
 			{
-				Response::redirect('admin/login');
+				Response::redirect('login');
 			}
 		}
 	}
@@ -29,7 +29,7 @@ class Controller_Admin extends Controller_Base
 	public function action_login()
 	{
 		// Already logged in
-		Auth::check() and Response::redirect('admin');
+		Auth::check() and Response::redirect('events');
 
 		$val = Validation::forge();
 
@@ -57,7 +57,7 @@ class Controller_Admin extends Controller_Base
 						$current_user = Model_User::find_by_username(Auth::get_screen_name());
 					}
 					Session::set_flash('success', e('Welcome, '.$current_user->username));
-					Response::redirect('admin/events');
+					Response::redirect('events');
 				}
 				else
 				{
@@ -79,7 +79,7 @@ class Controller_Admin extends Controller_Base
 	public function action_logout()
 	{
 		Auth::logout();
-		Response::redirect('admin');
+		Response::redirect('events');
 	}
 
 	/**
@@ -90,10 +90,10 @@ class Controller_Admin extends Controller_Base
 	 */
 	public function action_index()
 	{
-		Response::redirect('admin/events');
+		Response::redirect('events');
 		/*
 		$this->template->title = 'Events';
-		$this->template->content = View::forge('admin/events/index');
+		$this->template->content = View::forge('events/index');
 		*/
 	}
 

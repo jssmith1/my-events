@@ -1,5 +1,5 @@
 <?php
-class Controller_Admin_Events extends Controller_Admin 
+class Controller_Events extends Controller_Admin 
 {
 
 	public function action_index()
@@ -44,7 +44,7 @@ class Controller_Admin_Events extends Controller_Admin
 		$this->template->title = "Events";
 		//Only render the calendar for event index
 		Asset::js(array('app.js'), array(), 'app');
-		$this->template->content = View::forge('admin\events/index', $data);
+		$this->template->content = View::forge('events/index', $data);
 
 	}
 
@@ -53,7 +53,7 @@ class Controller_Admin_Events extends Controller_Admin
 		$data['event'] = Model_Event::find($id);
 
 		$this->template->title = "Event";
-		$this->template->content = View::forge('admin\events/view', $data);
+		$this->template->content = View::forge('events/view', $data);
 
 	}
 
@@ -112,7 +112,7 @@ class Controller_Admin_Events extends Controller_Admin
 						
 					}
 				
-					Response::redirect('admin/events');
+					Response::redirect('events');
 				}
 
 				else
@@ -127,7 +127,7 @@ class Controller_Admin_Events extends Controller_Admin
 		}
 
 		$this->template->title = "Events";
-		$this->template->content = View::forge('admin\events/create');
+		$this->template->content = View::forge('events/create');
 
 	}
 
@@ -184,7 +184,7 @@ class Controller_Admin_Events extends Controller_Admin
 			{
 				Session::set_flash('success', e('Updated event #' . $id));
 
-				Response::redirect('admin/events');
+				Response::redirect('events');
 			}
 
 			else
@@ -212,7 +212,7 @@ class Controller_Admin_Events extends Controller_Admin
 		}
 
 		$this->template->title = "Events"; 
-		$this->template->content = View::forge('admin\events/edit');
+		$this->template->content = View::forge('events/edit');
 
 	}
 
@@ -230,7 +230,7 @@ class Controller_Admin_Events extends Controller_Admin
 			Session::set_flash('error', e('Could not delete event #'.$id));
 		}
 
-		Response::redirect('admin/events');
+		Response::redirect('events');
 
 	}
 

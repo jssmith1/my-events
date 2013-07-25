@@ -7,5 +7,5 @@
 	<strong>Last:</strong>
 	<?php echo $employee->last; ?></p>
 
-<?php echo Html::anchor('admin/employees/edit/'.$employee->id, 'Edit'); ?> |
-<?php echo Html::anchor('admin/employees', 'Back'); ?>
+<?php echo Html::anchor('employees/edit/'.$employee->id, 'Edit'); ?> |
+<?php echo Html::anchor('employees', 'Back'); ?>

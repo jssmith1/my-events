@@ -24,9 +24,9 @@
 			<td><?php echo $event->end; ?></td>
 			<td><?php echo $event->user_id; ?></td>
 			<td>
-				<?php echo Html::anchor('admin/events/view/'.$event->id, 'View'); ?> |
-				<?php echo Html::anchor('admin/events/edit/'.$event->id, 'Edit'); ?> |
-				<?php echo Html::anchor('admin/events/delete/'.$event->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
+				<?php echo Html::anchor('events/view/'.$event->id, 'View'); ?> |
+				<?php echo Html::anchor('events/edit/'.$event->id, 'Edit'); ?> |
+				<?php echo Html::anchor('events/delete/'.$event->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
 			</td>
 		</tr>
@@ -48,7 +48,7 @@
 	    end: <?php 
 	    	echo '"'.join('T', explode(' ', $event->end)).'"';
 	    	 ?>,
-	   	url: <?php echo '"'.Uri::create('admin/events/view/'.$event->id).'"'; ?>,
+	   	url: <?php echo '"'.Uri::create('events/view/'.$event->id).'"'; ?>,
 	   	color: <?php echo '"'.Model_Event::get_type_color($event->type).'"'; ?> 
 	    },
 	 	
@@ -65,7 +65,7 @@
 		$jq('body')
 	        .append('<form id="startForm"></form>'); 
 	    $jq('#startForm') //set the form attributes
-	        .attr("action",<?php echo '"'.Uri::create('admin/events/create').'"'; ?>)
+	        .attr("action",<?php echo '"'.Uri::create('events/create').'"'; ?>)
 	        .attr("method","get") 
 	        .attr("type", "hidden")
 	        //add in the input
@@ -83,7 +83,7 @@
 
 <div>
 <p style="float:left">
-	<?php echo Html::anchor('admin/events/create', 'Add new Event', array('class' => 'btn btn-success')); ?>
+	<?php echo Html::anchor('events/create', 'Add new Event', array('class' => 'btn btn-success')); ?>
 </p>
 
 <?php
@@ -98,7 +98,7 @@ $employees = Model_Employee::find('all');
 
 <div class="filter" style="float:right">
 
-<?php echo Form::open(array("action" => Uri::create('admin/events/index'),
+<?php echo Form::open(array("action" => Uri::create('events/index'),
 							"method" => "get",
 							"class"=>"form-horizontal",
 							"id" => "filterForm")); ?>
