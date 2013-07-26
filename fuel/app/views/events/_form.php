@@ -152,10 +152,10 @@
 
 			<div class="controls">
 				<?php echo Form::select('techSupport[]', $techDefaults, $options, array('multiple' => 'multiple',
-																			'class' => 'span4')); 
+																						'class' => 'multiselect',
+																						'id' => 'techSupportForm')); 
 				?>
-				<p>*Hold ctrl to select multiple employees*<p>
-		
+				
 			</div>
 		</div>
 
@@ -165,10 +165,10 @@
 
 			<div class="controls">
 				<?php echo Form::select('assigned[]', $assignedDefaults, $options, array('multiple' => 'multiple',
-																			'class' => 'span4')); 
+																						'class' => 'multiselect',
+																						'id' => 'assignedForm')); 
 				?>
-				<p>*Hold ctrl to select multiple employees*<p>
-		
+				
 			</div>
 		</div>
 

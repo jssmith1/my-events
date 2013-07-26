@@ -5,6 +5,7 @@
 	<title><?php echo $title; ?></title>
 	<?php echo Asset::css(array(
 		'bootstrap.css',
+		'bootstrap-responsive.css',
 		'fullcalendar.css',
 		'jquery-ui-1.10.3.custom.css',
 		'jquery-ui-timepicker-addon.css',
@@ -18,7 +19,9 @@
 		'bootstrap.js',
 		'fullcalendar.js',
 		'date.js',
-		'jquery.validate.js'));
+		'jquery.validate.js',
+		'bootstrap-multiselect.js',
+		'dropdown.js',));
 
 	
 	echo Asset::render('app');
