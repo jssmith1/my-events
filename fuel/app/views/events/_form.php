@@ -123,11 +123,16 @@
 					$options = Model_Event::get_enum_values('type');
 
 					//Make each button
+					$i=1;
 					foreach ($options as $option){
 						//Generate the form. Check to see if type is set for a default
 						//Select button by default if it is in the post array or the event is already set (editing an event)
-						echo Form::radio('type', $option, ((isset($event) and $event->type == $option) or (Input::post('type') == $option)));
+					
+						echo "<label class='radio'>";
+						echo Form::radio('type', $option, ((isset($event) and $event->type == $option) or (Input::post('type') == $option)), array("id" => "form_type_".$i));
 						echo ' '.Inflector::words_to_upper($option)."<br>";
+						echo "</label>";
+						$i++;
 					}
 				?>
 
@@ -136,14 +141,8 @@
 
 		<?php 
 		//Set up options for tech support
-		$employees = Model_Employee::find('all');
-		foreach ($employees as $employee){
-			$ids[] = $employee->id;
-			$names[] = $employee->first.' '.$employee->last;
-		}
-		$options = array_combine($ids, $names);
-
-
+		$options = Model_Employee::getOptions();
+		
 		$techDefaults = $assignedDefaults = array();
 		if (isset($event)){
 			$techEmployees = Model_EmployeeEventLink::find('all', array('where' => array('eventId' => $event->id,

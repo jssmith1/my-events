@@ -31,6 +31,20 @@ class Model_Employee extends Model
 		return $val;
 	}
 
+	public static function getOptions(){
+		$employees = Model_Employee::find('all');
+		foreach ($employees as $employee){
+			$ids[] = $employee->id;
+			$names[] = $employee->first.' '.$employee->last;
+		}
+		$options = array_combine($ids, $names);
+		unset($options[12]); //Move employee none to the front
+		asort($options);
+		$options = array('12' => 'None ') + $options;
+		return $options;
+
+	}
+
 	protected static $_has_many = array(
 		'employeeEventLink' => array(
 			'key_from' => 'id',

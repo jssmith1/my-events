@@ -56,13 +56,8 @@
 </div>
 
 <?php
-$employees = Model_Employee::find('all');
-		foreach ($employees as $employee){
-			$ids[] = $employee->id;
-			$names[] = $employee->first.' '.$employee->last;
-		}
-		$options = array_combine($ids, $names);
-		$options["-1"] = "View All"; 
+	$options = Model_Employee::getOptions();
+	$options = array('-1' => 'View All') + $options; 
 ?>
 
 <div class="filter" style="float:right; position:relative; top:-30px">
