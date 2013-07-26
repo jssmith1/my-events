@@ -73,7 +73,7 @@
 
 	<div class="control-group" style:"width:375px">
 		<div class="controls" style="width:225px; float:left">
-			<?php echo Form::select('employeeId', null, $options, array('class' => 'span4')); ?>
+			<?php echo Form::select('employeeId', isset($employee)?$employee->id:null, $options, array('class' => 'span4')); ?>
 		</div>
 
 		<div class="controls" style="width:50px; float:right;">

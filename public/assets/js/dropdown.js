@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
 				if (options.length == 0) {
 		            return 'None selected <b class="caret"></b>';
 		        }
-		        else if (options.length > 6) {
+		        else if (options.length > 2) {
 		            return options.length + ' selected  <b class="caret"></b>';
 		        }
 		        else {
