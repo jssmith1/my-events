@@ -73,7 +73,7 @@
 						$types = Model_Event::get_enum_values('type');
 						if($types):
 						?>
-							<table id='key' style="background-color:white;">
+							<table id='key' class="key-table" cellpadding="5">
 								<tr>
 									<th>Event Type</th>
 									<th>Color</th>
@@ -83,7 +83,7 @@
 
 						foreach($types as $type): ?>
 							<tr>
-								<td> <?php echo $type?> </td>
+								<td> <?php echo ucfirst($type)?> </td>
 								<td <?php echo 'style="background-color:'. Model_Event::get_type_color($type).'"'?>></td>
 							</tr>
 

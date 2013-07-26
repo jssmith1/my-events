@@ -3,37 +3,6 @@
 <br>
 <?php if ($events): ?>
 
-<?php /*LISTING EVENTS	
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Start</th>
-			<th>End</th>
-			<th>User id</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-<?php foreach ($events as $event): ?>		<tr>
-
-			<td><?php echo $event->title; ?></td>
-			<td><?php echo $event->description; ?></td>
-			<td><?php echo $event->start; ?></td>
-			<td><?php echo $event->end; ?></td>
-			<td><?php echo $event->user_id; ?></td>
-			<td>
-				<?php echo Html::anchor('events/view/'.$event->id, 'View'); ?> |
-				<?php echo Html::anchor('events/edit/'.$event->id, 'Edit'); ?> |
-				<?php echo Html::anchor('events/delete/'.$event->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
-
-			</td>
-		</tr>
-<?php endforeach; ?>	</tbody>
-</table>
-*/ ?>
-
 <script type="text/javascript">
 	//set up the events to be displayed on the calendar
 	
@@ -82,9 +51,9 @@
 <?php endif; ?>
 
 <div>
-<p style="float:left">
+<div style="float:left;">
 	<?php echo Html::anchor('events/create', 'Add new Event', array('class' => 'btn btn-success')); ?>
-</p>
+</div>
 
 <?php
 $employees = Model_Employee::find('all');
@@ -96,29 +65,26 @@ $employees = Model_Employee::find('all');
 		$options["-1"] = "View All"; 
 ?>
 
-<div class="filter" style="float:right">
+<div class="filter" style="float:right; position:relative; top:-30px">
 
 <?php echo Form::open(array("action" => Uri::create('events/index'),
 							"method" => "get",
 							"class"=>"form-horizontal",
 							"id" => "filterForm")); ?>
 
-<div class="control-group">
-	<?php echo Form::label('Employee Filter', 'employeeId', array('class'=>'control-label')); ?>
-
-	<div class="controls">
-		<?php echo Form::select('employeeId', null, $options, array('class' => 'span4')); 
-		?>
-
+	<div class="control-group">
+		<?php echo Form::label('Employee Filter:', 'employeeId', array('class'=>'control-label', 'style' =>"float:right; position:relative; bottom:-15px")); ?>
 	</div>
-</div>
 
+	<div class="control-group" style:"width:375px">
+		<div class="controls" style="width:325px; float:left">
+			<?php echo Form::select('employeeId', null, $options, array('class' => 'span4')); ?>
+		</div>
 
-<div class="control-group" >
-			<div class='controls'>
-				<?php echo Form::submit('submit', 'Filter', array('class' => 'btn btn-primary')); ?>	
-			</div>
-</div>
+		<div class="ccontrols" style="width:50px; float:right;">
+			<?php echo Form::submit('submit', 'Filter', array('class' => 'btn btn-primary')); ?>	
+		</div>
+	</div>
 </div>
 </div>
 

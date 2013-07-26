@@ -2,15 +2,6 @@
 	color:red;
 }
 
-.dropdown-menu{
-	min-width: 0;
-}
-
-.key-table{
-	 background-color:white;
-	 color:#000000;
-}
-
 @media print{
 
 	.navbar{
