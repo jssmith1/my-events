@@ -38,9 +38,7 @@ class Model_Employee extends Model
 			$names[] = $employee->first.' '.$employee->last;
 		}
 		$options = array_combine($ids, $names);
-		unset($options[12]); //Move employee none to the front
 		asort($options);
-		$options = array('12' => 'None ') + $options;
 		return $options;
 
 	}

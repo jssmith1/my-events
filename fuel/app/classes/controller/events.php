@@ -84,30 +84,32 @@ class Controller_Events extends Controller_Admin
 					//First tech support
 			
 					foreach(Input::post('techSupport', array()) as $employee){
-						$link = Model_EmployeeEventLink::forge(array(
-							'employeeID' => $employee,
-							'eventID' => $event->id,
-							'role' => 'techSupport'
-							)
-						);
-						if (!$link or !$link->save()){
-							//Notify of the error but keep linking
-							Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees (Contact the administrator).'));
+						if ($employee != 0){ //Don't create a link for select all
+							$link = Model_EmployeeEventLink::forge(array(
+								'employeeID' => $employee,
+								'eventID' => $event->id,
+								'role' => 'techSupport'
+								)
+							);
+							if (!$link or !$link->save()){
+								//Notify of the error but keep linking
+								Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees (Contact the administrator).'));
+							}
 						}
-						
 					}
 						
 					foreach(Input::post('assigned', array()) as $employee){
-
-						$link = Model_EmployeeEventLink::forge(array(
-							'employeeID' => $employee,
-							'eventID' => $event->id,
-							'role' => 'assigned'
-							)
-						);
-						if (!$link or !$link->save()){
-							//Log the error, but keep trying to link
-							Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees. (Contact the administrator)'));
+						if ($employee != 0){
+							$link = Model_EmployeeEventLink::forge(array(
+								'employeeID' => $employee,
+								'eventID' => $event->id,
+								'role' => 'assigned'
+								)
+							);
+							if (!$link or !$link->save()){
+								//Log the error, but keep trying to link
+								Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees. (Contact the administrator)'));
+							}
 						}
 						
 					}
@@ -154,29 +156,33 @@ class Controller_Events extends Controller_Admin
 
 			//And link new employees
 			foreach(Input::post('techSupport', array()) as $employee){
-				$link = Model_EmployeeEventLink::forge(array(
-					'employeeID' => $employee,
-					'eventID' => $event->id,
-					'role' => 'techSupport'
-					)
-				);
-				if (!$link or !$link->save()){
-					//Notify of the error but keep linking
-					Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees (Contact the administrator).'));
+				if ($employee != 0){
+					$link = Model_EmployeeEventLink::forge(array(
+						'employeeID' => $employee,
+						'eventID' => $event->id,
+						'role' => 'techSupport'
+						)
+					);
+					if (!$link or !$link->save()){
+						//Notify of the error but keep linking
+						Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees (Contact the administrator).'));
+					}
 				}
 			}
 
 			foreach(Input::post('assigned', array()) as $employee){
-				$link = Model_EmployeeEventLink::forge(array(
-					'employeeID' => $employee,
-					'eventID' => $event->id,
-					'role' => 'assigned'
-					)
-				);
-				if (!$link or !$link->save()){
-					//Notify of the error but keep linking
-					Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees (Contact the administrator).'));
-				}				
+				if ($employee != 0) {
+					$link = Model_EmployeeEventLink::forge(array(
+						'employeeID' => $employee,
+						'eventID' => $event->id,
+						'role' => 'assigned'
+						)
+					);
+					if (!$link or !$link->save()){
+						//Notify of the error but keep linking
+						Session::set_flash('error', e('Added event #'.$event->id.'. Error Linking Employees (Contact the administrator).'));
+					}				
+				}
 			}
 
 

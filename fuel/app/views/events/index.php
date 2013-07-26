@@ -72,11 +72,11 @@
 	</div>
 
 	<div class="control-group" style:"width:375px">
-		<div class="controls" style="width:325px; float:left">
+		<div class="controls" style="width:225px; float:left">
 			<?php echo Form::select('employeeId', null, $options, array('class' => 'span4')); ?>
 		</div>
 
-		<div class="ccontrols" style="width:50px; float:right;">
+		<div class="controls" style="width:50px; float:right;">
 			<?php echo Form::submit('submit', 'Filter', array('class' => 'btn btn-primary')); ?>	
 		</div>
 	</div>
@@ -85,6 +85,6 @@
 
 <?php echo Form::close(); ?>
 
-<div id='calendar' style="clear:both"></div>
+<div id='calendar' class="clearfix"></div>
 
 <br>

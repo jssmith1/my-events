@@ -19,7 +19,7 @@
 	.fc-button{
 		display:none;
 	}
-	.btn{
+	.btn, .btn-primary{
 		display:none;
 	}
 	.filter{

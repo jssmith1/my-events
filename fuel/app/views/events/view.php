@@ -26,10 +26,14 @@
 	<?php echo ucfirst($event->type)?>
 </p>
 
-<div style="position:fixed; float:left"><h4>Tech Support:</h4>
+<div style="float:left"><h4>Tech Support:</h4>
 <ul>
 <?php $techEmployees = Model_EmployeeEventLink::find('all', array('where' => array('eventId' => $event->id,
 																						'role' => 'techSupport'))); 
+
+	if (!$techEmployees){
+		echo "<li>None</li>";
+	}
 	foreach ($techEmployees as $techEmployee){
 			$employee = Model_Employee::find($techEmployee->employeeID);
 			echo "<li> $employee->first $employee->last </li>";
@@ -41,7 +45,10 @@
 <div style="margin-left:200px"><h4>Assigned Employees:</h4>
 <ul>
 <?php $assignedEmployees = Model_EmployeeEventLink::find('all', array('where' => array('eventId' => $event->id,
-																						'role' => 'assigned'))); 
+																						'role' => 'assigned')));
+	if(!$assignedEmployees){
+		echo '<li>None</li>';
+	}
 	foreach ($assignedEmployees as $assignedEmployee){
 			$employee = Model_Employee::find($assignedEmployee->employeeID);
 			echo "<li> $employee->first $employee->last </li>";
