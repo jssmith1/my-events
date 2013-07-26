@@ -16,7 +16,6 @@
 			$startValue = '';
 			if (isset($event)){
 				//Start value in the DB
-
 				$startValue = join('T', explode(' ', $event->start));
 			}
 			else if (array_key_exists('start', $_GET)){
@@ -34,19 +33,6 @@
 
 			</div>
 		</div>
-
-		<?php //Start time
-			$startValue = '';
-			if (isset($event)){
-				//Start value in the DB
-
-				$startValue = join('T', explode(' ', $event->start));
-			}
-			else if (array_key_exists('start', $_GET)){
-				//GET the start value from a calendar click 
-				$startValue = substr($_GET['start'], 0 , -5);
-			} 
-		?>
 
 		<div class="control-group">
 			<?php echo Form::label('Start', 'start', array('class'=>'control-label')); ?>
@@ -220,10 +206,13 @@ $(document).ready(function() {
 		if (!end){
 			end = Date.parse(value + ":00");
 		}
+		if (!end || !start){
+			return false;
+		}
 //		console.log(start, end, value)
 		return (end.compareTo(start) > 0);
 		},
-		'End date must occur after start date.');
+		'End date and time must occur after start date.');
 	//
 	$('#eventForm').validate({
 		rules:{
