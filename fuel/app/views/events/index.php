@@ -51,39 +51,35 @@
 <?php endif; ?>
 
 <div>
-<div style="float:left;">
+
+<span class="pull-left;">
 	<?php echo Html::anchor('events/create', 'Add new Event', array('class' => 'btn btn-success')); ?>
-</div>
+</span>
 
 <?php
 	$options = Model_Employee::getOptions();
 	$options = array('-1' => 'View All') + $options; 
 ?>
 
-<div class="filter" style="float:right; position:relative; top:-30px">
 
-<?php echo Form::open(array("action" => Uri::create('events/index'),
+<div class="filter pull-right">
+
+	<?php echo Form::open(array("action" => Uri::create('events/index'),
 							"method" => "get",
 							"class"=>"form-horizontal",
 							"id" => "filterForm")); ?>
 
-	<div class="control-group">
-		<?php echo Form::label('Employee Filter:', 'employeeId', array('class'=>'control-label', 'style' =>"float:right; position:relative; bottom:-15px")); ?>
-	</div>
-
-	<div class="control-group" style:"width:375px">
-		<div class="controls" style="width:225px; float:left">
+		<div class="control-group controls">
+			<?php echo Form::label('Employee Filter:', 'employeeId'); ?>
 			<?php echo Form::select('employeeId', isset($employee)?$employee->id:null, $options, array('class' => 'span4')); ?>
-		</div>
-
-		<div class="controls" style="width:50px; float:right;">
 			<?php echo Form::submit('submit', 'Filter', array('class' => 'btn btn-primary')); ?>	
 		</div>
-	</div>
-</div>
+
+	<?php echo Form::close(); ?>		
 </div>
 
-<?php echo Form::close(); ?>
+</div>
+
 
 <div id='calendar' class="clearfix"></div>
 

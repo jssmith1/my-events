@@ -11,18 +11,24 @@
 	 color:#000000;
 }
 
-@media print{
+table.key-table td{
+	padding:10px;
+}
 
-	.navbar{
-		display:none;
+.filter{
+	display: inline;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+
+@media print{
+	body, #content, .container {
+	width: 100%;
+	margin: 0;
+	zoom:80%;
 	}
-	.fc-button{
-		display:none;
-	}
-	.btn, .btn-primary{
-		display:none;
-	}
-	.filter{
+
+	.navbar, .fc-button, .btn, .filter, .no-print{
 		display:none;
 	}
 }

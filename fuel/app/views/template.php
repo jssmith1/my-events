@@ -10,7 +10,11 @@
 		'jquery-ui-1.10.3.custom.css',
 		'jquery-ui-timepicker-addon.css',
 		'app.css'
-		)); ?>
+		)); 
+
+		echo Asset::css('fullcalendar.print.css',
+							array('media' => 'print'));?>
+
 	<style>
 		body { margin: 50px; }
 	</style>
@@ -40,7 +44,7 @@
 
 </head>
 <body>
-
+	<div id="body">
 	<?php if ($current_user): ?>
 	<div class="navbar navbar-fixed-top">
 	    <div class="navbar-inner">
@@ -76,7 +80,7 @@
 						$types = Model_Event::get_enum_values('type');
 						if($types):
 						?>
-							<table id='key' class="key-table" cellpadding="5">
+							<table id='key' class="key-table">
 								<tr>
 									<th>Event Type</th>
 									<th>Color</th>
@@ -112,7 +116,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="span12">
+			<div class="span12 no-print">
 				<h1><?php echo $title; ?></h1>
 				<hr>
 <?php if (Session::get_flash('success')): ?>
@@ -135,12 +139,9 @@
 		<hr/>
 
 		<footer>
-		<!--	<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
-			<p>
-				<a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
-				<small>Version: <?php echo e(Fuel::VERSION); ?></small>
-		-->	</p>
+	
 		</footer>
 	</div>
+</div>
 </body>
 </html>

@@ -38,7 +38,7 @@
 			<?php echo Form::label('Start', 'start', array('class'=>'control-label')); ?>
 
 			<div class="controls">
-				<?php echo Form::input('start', Input::post('start', $startValue), array('class' => 'span4', 'placeholder'=>'Start', 'type' => 'datetime-local')); ?>
+				<?php echo Form::input('start', Input::post('start', $startValue), array('class' => 'span4', 'type' => 'datetime-local')); ?>
 
 			</div>
 		</div>
@@ -48,7 +48,7 @@
 			<?php echo Form::label('End', 'end', array('class'=>'control-label')); ?>
 
 			<div class="controls">
-				<?php echo Form::input('end', Input::post('end', isset($event) ? join('T', explode(' ', $event->end)) : ''), array('class' => 'span4', 'placeholder'=>'End', 'type' => 'datetime-local')); ?>
+				<?php echo Form::input('end', Input::post('end', isset($event) ? join('T', explode(' ', $event->end)) : ''), array('class' => 'span4', 'type' => 'datetime-local')); ?>
 
 			</div>
 		</div>
@@ -100,7 +100,7 @@
 
 		<div class="control-group">
 		<?php //Form for getting the type of event
-			echo Form::label('Type', 'type', array('class' => 'control-label')); ?>
+			echo Form::label('Type', '', array('class' => 'control-label')); ?>
 
 			<div class="controls">
 				<?php
@@ -148,7 +148,7 @@
 
 		<!--Tech Support-->
 		<div class="control-group" style="float:left">
-			<?php echo Form::label('Tech Support', 'techSupport', array('class'=>'control-label')); ?>
+			<?php echo Form::label('Tech Support', '', array('class'=>'control-label')); ?>
 
 			<div class="controls">
 				<?php echo Form::select('techSupport[]', $techDefaults, $options, array('multiple' => 'multiple',
@@ -161,7 +161,7 @@
 
 		<!--Assigned-->
 		<div class="control-group" style="float:left">
-			<?php echo Form::label('Assigned', 'assigned', array('class'=>'control-label')); ?>
+			<?php echo Form::label('Assigned', '', array('class'=>'control-label')); ?>
 
 			<div class="controls">
 				<?php echo Form::select('assigned[]', $assignedDefaults, $options, array('multiple' => 'multiple',
@@ -174,7 +174,7 @@
 
 		<!--User ID (Hidden Form)-->
 		<div class="control-group">
-			<?php echo Form::label('', 'user_id', array('class'=>'control-label')); ?>
+			<?php echo Form::label('', '', array('class'=>'control-label')); ?>
 
 			<div class="controls">
 				<?php //Grab the user ID from the logged in admin (1) 
