@@ -6,9 +6,9 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=calendar',
-			'username'   => 'root',
-			'password'   => 'password',
+			'dsn'        => 'mysql:host=localhost;dbname=liveeventscalendar',
+			'username'   => 'eventscalendar',
+			'password'   => 'UnrsB8GFhtvS2pTW',
 		),
 		'profiling' => true,
 	),

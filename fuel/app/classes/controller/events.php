@@ -4,6 +4,7 @@ class Controller_Events extends Controller_Admin
 
 	public function action_index()
 	{
+		$data['employees'] = Model_Employee::getOptions();
 		//Check to see if an employee has been specified
 		 if (array_key_exists('employeeId', $_GET)){
 		 	//Basic sanitization

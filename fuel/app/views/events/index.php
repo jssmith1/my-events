@@ -57,8 +57,7 @@
 </span>
 
 <?php
-	$options = Model_Employee::getOptions();
-	$options = array('-1' => 'View All') + $options; 
+	$employees = array('-1' => 'View All') + $employees; 
 ?>
 
 
@@ -71,7 +70,7 @@
 
 		<div class="control-group controls">
 			<?php echo Form::label('Employee Filter:', 'employeeId'); ?>
-			<?php echo Form::select('employeeId', isset($employee)?$employee->id:null, $options, array('class' => 'span4')); ?>
+			<?php echo Form::select('employeeId', isset($employee)?$employee->id:null, $employees, array('class' => 'span4')); ?>
 			<?php echo Form::submit('submit', 'Filter', array('class' => 'btn btn-primary')); ?>	
 		</div>
 

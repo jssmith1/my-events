@@ -29,8 +29,10 @@ class Model_Event extends \Orm\Model
 
 	public static function get_type_color($type){
 		//given a string representing an event's type return the color from the dictionary
-		if(array_key_exists($type, self::get_color_map())){
-			return self::get_color_map()[$type];
+
+		$search = self::get_color_map();
+		if(array_key_exists($type, $search)){
+			return $search[$type];
 		}
 		//Return a default color	
 		return '#378006';

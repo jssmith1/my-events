@@ -32,13 +32,15 @@ class Model_Employee extends Model
 	}
 
 	public static function getOptions(){
-		$employees = Model_Employee::find('all');
-		foreach ($employees as $employee){
-			$ids[] = $employee->id;
-			$names[] = $employee->first.' '.$employee->last;
+		//DB::expr('CONCAT(first, " ", last) as `name`')
+		$results = DB::select('id', DB::expr('CONCAT(first, " ", last) as `name`'))->from('employees')->order_by('name')->execute()->as_array();
+		//return $options->as_array();
+
+		$options = [];
+		foreach($results as $result){
+			$options[$result['id']] = $result['name']; 
 		}
-		$options = array_combine($ids, $names);
-		asort($options);
+		
 		return $options;
 
 	}

@@ -49,7 +49,7 @@
 	<div class="navbar navbar-fixed-top">
 	    <div class="navbar-inner">
 	        <div class="container">
-	            <a href="#" class="brand">My Calendar</a>
+	            <a href="#" class="brand">Live Events Calendar</a>
 	            <ul class="nav">
 					<?php
 						$files = new GlobIterator(APPPATH.'classes/controller/*.php');
