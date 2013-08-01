@@ -112,7 +112,7 @@ class Controller_Employees extends Controller_Admin{
 	{
 		is_null($id) and Response::redirect('employees');
 
-		if ($employee = Model_Employee::find($id, array('related' => array('employeeEventLink'))))
+		if ($employee = Model_Employee::find($id, array('related' => array('employeeeventlink'))))
 		{
 			$employee->delete();
 

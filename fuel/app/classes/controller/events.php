@@ -225,7 +225,7 @@ class Controller_Events extends Controller_Admin
 
 	public function action_delete($id = null)
 	{
-		if ($event = Model_Event::find($id, array('related' => array('employeeEventLink'))))
+		if ($event = Model_Event::find($id, array('related' => array('employeeeventlink'))))
 		{
 			$event->delete();
 

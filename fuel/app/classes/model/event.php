@@ -83,7 +83,7 @@ class Model_Event extends Model
 	}
 
 	protected static $_has_many = array(
-		'employeeEventLink' => array(
+		'employeeeventlink' => array(
 			'key_from' => 'id',
 			'model_to' => 'Model_EmployeeEventLink',
 			'key_to' => 'eventID',
