@@ -36,7 +36,7 @@ class Model_Employee extends Model
 		$results = DB::select('id', DB::expr('CONCAT(first, " ", last) as `name`'))->from('employees')->order_by('name')->execute()->as_array();
 		//return $options->as_array();
 
-		$options = [];
+		$options = array();
 		foreach($results as $result){
 			$options[$result['id']] = $result['name']; 
 		}
