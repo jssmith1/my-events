@@ -1,5 +1,6 @@
 <?php
-class Model_Event extends \Orm\Model
+use Orm\Model;
+class Model_Event extends Model
 {
 	protected static $_properties = array(
 		'id',

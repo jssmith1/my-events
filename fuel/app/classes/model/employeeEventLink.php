@@ -1,6 +1,6 @@
 <?php
-
-class Model_EmployeeEventLink extends \Orm\Model
+use Orm\Model;
+class Model_EmployeeEventLink extends Model
 {
 	protected static $_properties = array(
 		'id',
