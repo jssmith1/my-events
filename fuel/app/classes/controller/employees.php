@@ -39,7 +39,7 @@ class Controller_Employees extends Controller_Admin{
 
 				if ($employee and $employee->save())
 				{
-					Session::set_flash('success', 'Added employee #'.$employee->id.'.');
+					Session::set_flash('success', 'Added '.$employee->first.' '.$employee->last.'.');
 
 					Response::redirect('employees');
 				}

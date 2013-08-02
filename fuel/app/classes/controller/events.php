@@ -79,7 +79,7 @@ class Controller_Events extends Controller_Admin
 
 				if ($event and $event->save())
 				{
-					Session::set_flash('success', e('Added event #'.$event->id.'.'));
+					Session::set_flash('success', e('Added event '.$event->title.'.'));
 
 					//Created the event, now link the employees
 					//First tech support
