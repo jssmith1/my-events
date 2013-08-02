@@ -189,7 +189,7 @@ class Controller_Events extends Controller_Admin
 
 			if ($event->save())
 			{
-				Session::set_flash('success', e('Updated event #' . $id));
+				Session::set_flash('success', e('Updated event '.$event->title.'.'));
 
 				Response::redirect('events');
 			}
@@ -229,7 +229,7 @@ class Controller_Events extends Controller_Admin
 		{
 			$event->delete();
 
-			Session::set_flash('success', e('Deleted event #'.$id));
+			Session::set_flash('success', e('Deleted event '.$event->title.'.'));
 		}
 
 		else

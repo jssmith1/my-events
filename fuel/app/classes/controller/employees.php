@@ -79,7 +79,7 @@ class Controller_Employees extends Controller_Admin{
 
 			if ($employee->save())
 			{
-				Session::set_flash('success', 'Updated employee #' . $id);
+				Session::set_flash('success', 'Updated '.$employee->first.' '.$employee->last.'.');
 
 				Response::redirect('employees');
 			}
@@ -116,7 +116,7 @@ class Controller_Employees extends Controller_Admin{
 		{
 			$employee->delete();
 
-			Session::set_flash('success', 'Deleted employee #'.$id);
+			Session::set_flash('success', 'Deleted '.$employee->first.' '.$employee->last.'.');
 		}
 
 		else
