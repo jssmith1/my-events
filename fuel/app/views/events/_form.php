@@ -144,6 +144,12 @@
 			}
 		}
 		
+		if (Input::post('techSupport')){ //Check for set post data from previous submission.
+			$techDefaults = Input::post('techSupport'); //If found, check those boxes on the form
+		}
+		if (Input::post('assigned')){
+			$assignedDefaults = Input::post('assigned');
+		}
 		?>
 
 		<!--Tech Support-->
@@ -165,8 +171,8 @@
 
 			<div class="controls">
 				<?php echo Form::select('assigned[]', $assignedDefaults, $options, array('multiple' => 'multiple',
-																						'class' => 'multiselect',
-																						'id' => 'assignedForm')); 
+																						 'class' => 'multiselect',
+																						 'id' => 'assignedForm')); 
 				?>
 				
 			</div>
