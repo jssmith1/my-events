@@ -1,13 +1,12 @@
 <h2>Listing Events <?php if (isset($employee)) echo "for $employee->first $employee->last";?>
 </h2>
 <br>
-<?php if ($events): ?>
 
 <script type="text/javascript">
 	//set up the events to be displayed on the calendar
-	
-	var events_array = [
-	   <?php foreach ($events as $event): ?>
+
+		var events_array = [
+	    <?php foreach ($events as $event): ?>
 	    
 	    {title: <?php echo'"'.$event->association.'"'; ?>,
 	    //Reformat the dates
@@ -45,10 +44,10 @@
 
 </script>
 
-<?php else: ?>
-<p>No Events.</p>
-
-<?php endif; ?>
+<?php if (!$events){
+	echo "<p>No Events.</p>";
+}
+?>
 
 <div>
 
