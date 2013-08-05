@@ -12,18 +12,6 @@
 			</div>
 		</div>
 
-		<?php //Start time
-			$startValue = '';
-			if (isset($event)){
-				//Start value in the DB
-				$startValue = join('T', explode(' ', $event->start));
-			}
-			else if (array_key_exists('start', $_GET)){
-				//GET the start value from a calendar click 
-				$startValue = substr($_GET['start'], 0 , -5);
-			} 
-		?>
-		
 		<!--Association-->
 		<div class="control-group">
 			<?php echo Form::label('Association', 'association', array('class'=>'control-label')); ?>
@@ -33,6 +21,18 @@
 
 			</div>
 		</div>
+
+		<?php //Start time
+			$startValue = '';
+			if (isset($event)){
+				//Start value in the DB
+				$startValue = join('T', explode(' ', $event->start));
+			}
+			else if (array_key_exists('start', $_GET)){
+				//GET the start value from a calendar click 
+				$startValue = $_GET['start'];
+			} 
+		?>
 
 		<div class="control-group">
 			<?php echo Form::label('Start', 'start', array('class'=>'control-label')); ?>

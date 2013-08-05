@@ -28,7 +28,7 @@
 
 		var $jq = jQuery.noConflict();
 
-		input = '<input type="text" name="start" value="' + date.toISOString() + '">'
+		input = '<input type="text" name="start" value="' + date.toString("yyyy-MM-ddTHH:mm") + '">'
 
 		$jq('body')
 	        .append('<form id="startForm"></form>'); 
