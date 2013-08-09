@@ -13,6 +13,7 @@ return array(
 				4 => '005_create_employees',
 				5 => '006_create_employeeEventLinks',
 				6 => '007_add_association_to_events',
+				7 => '008_add_session_reference_to_events',
 			),
 		),
 		'module' => 

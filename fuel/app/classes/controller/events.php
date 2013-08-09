@@ -75,6 +75,7 @@ class Controller_Events extends Controller_Admin
 					'type' => Input::post('type'),
 					'issues' => Input::post('issues'),
 					'association' => Input::post('association'),
+					'session_reference' => Input::post('session_reference')
 				));
 
 				if ($event and $event->save())

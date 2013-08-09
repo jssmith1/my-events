@@ -14,6 +14,7 @@ class Model_Event extends Model
 		'type',
 		'issues',
 		'association',
+		'session_reference'
 	);
 
 
