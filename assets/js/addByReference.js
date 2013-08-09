@@ -6,10 +6,10 @@ jQuery(document).ready(function(){
   		//Check for id
   		var reference_id = $('#form_session_reference').val()
   		if(!reference_id){
-  			return; //if no id, return
+  			return; //if no id, don't make the api call
   		}
 
-  		jQuery.ajax({
+  		jQuery.ajax({ //ajax request
   			url: '/rest/prolibraries/webinars',
   			data: {
   				//Testing
@@ -23,34 +23,28 @@ jQuery(document).ready(function(){
   			
     		},
     		success:function(data){
+
     			//console.log(data);
-    		
-    			if (data.Result == '1') {//found a webinar
-					jQuery('#form_title').val(data.webinarName)
-					var start = data.sessionDate + 'T' + data.startTime;
-					var end = data.sessionDate + 'T' + data.endTime;
-					jQuery('#form_start').val(start);
-					jQuery('#form_end').val(end);
-					jQuery('#form_association').val(data.libname);
-					jQuery('#form_description').val(data.sessionDescription);
-	   				
+    			if (data.Result == '1') { //found a webinar
+
+  					jQuery('#form_title').val(data.webinarName)
+  					var start = data.sessionDate + 'T' + data.startTime;
+  					var end = data.sessionDate + 'T' + data.endTime;
+  					jQuery('#form_start').val(start);
+  					jQuery('#form_end').val(end);
+  					jQuery('#form_association').val(data.libname);
+  					jQuery('#form_description').val(data.sessionDescription);
+  	   				
 	   				if (data.webinarType == "Webinar"){
 	   					jQuery('#form_type_1').attr('checked', 'checked');
-	   				}
-
-	   				jQuery(".add-by-ref").hide();
-   			    }
-   			    else{
-   			    	alert('Webinar not found ('+ reference_id +')')
-   			    }
-
-
-
-
+            }
+            jQuery(".add-by-ref").hide();
+          }
+ 			    else{
+ 			    	alert('Webinar not found ('+ reference_id +')')
+ 			    }    
     		}
     	});
 
-  		//jQuery('#form_title').val("Success!!!!");
-   		
   });
 });
