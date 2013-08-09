@@ -23,7 +23,7 @@ jQuery(document).ready(function(){
   			
     		},
     		success:function(data){
-    			console.log(data);
+    			//console.log(data);
     		
     			if (data.Result == '1') {//found a webinar
 					jQuery('#form_title').val(data.webinarName)
