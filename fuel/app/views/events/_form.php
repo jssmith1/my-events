@@ -1,6 +1,26 @@
 <?php echo Form::open(array("class"=>"form-horizontal",
 							"id" => "eventForm")); ?>
 
+
+	<?php if (isset($create)): //Are we creating? If so show add by reference?> 							
+		<div class="add-by-ref">
+			<h2>Add by Reference</h2>
+			<br>
+
+			<div class="control-group">
+							<?php echo Form::label('Session Reference', 'session_reference', array('class'=>'control-label')); ?>
+
+							<div class="controls">
+								<?php echo Form::input('session_reference', Input::post('session_reference', isset($event) ? $event->title : ''), array('class' => 'span4', 'placeholder'=>'Session Reference')); ?>
+								<input type="button" value="Find" id ="session_ref_btn" class="btn">
+							</div>
+				</div>
+
+		</div>
+		<h2>New Event</h2>
+		<br>
+	<?php endif; ?>
+	
 	<fieldset>
 		<!--Title-->
 		<div class="control-group">
@@ -38,7 +58,7 @@
 			<?php echo Form::label('Start', 'start', array('class'=>'control-label')); ?>
 
 			<div class="controls">
-				<?php echo Form::input('start', Input::post('start', $startValue), array('class' => 'span4', 'type' => 'datetime-local')); ?>
+				<?php echo Form::input('start', Input::post('start', $startValue), array('class' => 'span4', 'value'=>'', 'type' => 'datetime-local')); ?>
 
 			</div>
 		</div>

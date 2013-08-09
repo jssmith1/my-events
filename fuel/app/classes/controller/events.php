@@ -129,8 +129,9 @@ class Controller_Events extends Controller_Admin
 			}
 		}
 
+		$data['create'] = true;
 		$this->template->title = "Events";
-		$this->template->content = View::forge('events/create');
+		$this->template->content = View::forge('events/create', $data);
 
 	}
 

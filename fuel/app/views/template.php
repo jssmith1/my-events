@@ -9,7 +9,7 @@
 		'fullcalendar.css',
 		'jquery-ui-1.10.3.custom.css',
 		'jquery-ui-timepicker-addon.css',
-		'app.css'
+		'app.css',
 		)); 
 
 		echo Asset::css('fullcalendar.print.css',
@@ -25,7 +25,8 @@
 		'date.js',
 		'jquery.validate.js',
 		'bootstrap-multiselect.js',
-		'dropdown.js',));
+		'dropdown.js',
+		'addByReference.js',));
 
 	
 	echo Asset::render('app');
