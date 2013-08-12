@@ -7,7 +7,7 @@ class Add_session_reference_to_events
 	public function up()
 	{
 		\DBUtil::add_fields('events', array(
-			'session_reference' => array('constraint' => 255, 'type' => 'varchar'),
+			'session_reference' => array('constraint' => 255, 'type' => 'varchar', 'null' => true),
 
 		));
 	}

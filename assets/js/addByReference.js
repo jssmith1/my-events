@@ -34,6 +34,7 @@ jQuery(document).ready(function(){
   					jQuery('#form_end').val(end);
   					jQuery('#form_association').val(data.libname);
   					jQuery('#form_description').val(data.sessionDescription);
+            jQuery('#form_session_reference2').val(reference_id);
   	   				
 	   				if (data.webinarType == "Webinar"){
 	   					jQuery('#form_type_1').attr('checked', 'checked');
@@ -47,4 +48,5 @@ jQuery(document).ready(function(){
     	});
 
   });
+
 });

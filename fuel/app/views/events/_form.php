@@ -7,6 +7,9 @@
 			<h2>Add by Reference</h2>
 			<br>
 
+			<?php echo Form::open(array("class"=>"form-horizontal",
+										"id" => "sessionReferenceForm")); ?>
+
 			<div class="control-group">
 							<?php echo Form::label('Session Reference', 'session_reference', array('class'=>'control-label')); ?>
 
@@ -15,12 +18,16 @@
 								<input type="button" value="Find" id ="session_ref_btn" class="btn">
 							</div>
 				</div>
+				<?php echo Form::close(); ?>
 
 		</div>
 		<h2>New Event</h2>
 		<br>
 	<?php endif; ?>
 	
+
+<?php echo Form::open(array("class"=>"form-horizontal",
+							"id" => "eventForm")); ?>
 	<fieldset>
 		<!--Title-->
 		<div class="control-group">
@@ -205,6 +212,16 @@
 			<div class="controls">
 				<?php //Grab the user ID from the logged in admin (1) 
 				echo Form::input('user_id', Input::post('id', $current_user->id), array('type' => 'hidden', 'class' => 'span4')); ?>
+			</div>
+		</div>
+
+		<!--Session reference if it exists (Hidden Form)-->
+		<div class="control-group">
+			<?php echo Form::label('', '', array('class'=>'control-label')); ?>
+
+			<div class="controls">
+				<?php //Grab the user ID from the logged in admin (1) 
+				echo Form::input('session_reference2', null, array('type' => 'hidden', 'class' => 'span4')); ?>
 			</div>
 		</div>
 
