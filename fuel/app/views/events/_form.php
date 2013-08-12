@@ -1,5 +1,5 @@
 <?php echo Form::open(array("class"=>"form-horizontal",
-							"id" => "eventForm")); ?>
+							"id" => "referenceForm")); ?>
 
 
 	<?php if (isset($create)): //Are we creating? If so show add by reference?> 							
@@ -258,6 +258,9 @@ $(document).ready(function() {
 		'End date and time must occur after start date.');
 	//
 	$('#eventForm').validate({
+		onfocusout: false,
+		onkeyup: false,
+		onclick: false,
 		rules:{
 			end:{
 				endAfterStart:true
