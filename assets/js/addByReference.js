@@ -10,7 +10,7 @@ jQuery(document).ready(function(){
   		}
 
   		jQuery.ajax({ //ajax request
-  			url: '/rest/prolibraries/webinars',
+  			url: '../rest/prolibraries/webinars',
   			data: {
   				//Testing
   				//reference_id: 'amt_s01_06_06_12'// does not have a session
@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
   			type:"GET",
   			dataType:"JSON",
   			error: function( xhr, status, thrownError ) {
-  			
+
     		},
     		success:function(data){
 
@@ -35,7 +35,7 @@ jQuery(document).ready(function(){
   					jQuery('#form_association').val(data.libname);
   					jQuery('#form_description').val(data.sessionDescription);
             jQuery('#form_session_reference2').val(reference_id);
-  	   				
+
 	   				if (data.webinarType == "Webinar"){
 	   					jQuery('#form_type_1').attr('checked', 'checked');
             }
@@ -43,7 +43,7 @@ jQuery(document).ready(function(){
           }
  			    else{
  			    	alert('Webinar not found ('+ reference_id +')')
- 			    }    
+ 			    }
     		}
     	});
 
