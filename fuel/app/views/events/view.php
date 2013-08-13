@@ -4,9 +4,11 @@
 }?>
 </h2>
 
+<?php if($event->description):?>
 <p><h4>Description:</h4>
 	<pre><?php echo $event->description; ?></pre>
 </p>
+<?php endif; ?>
 
 <?php if($event->issues):?> 
 	<p><h4>Known Issues</h4>

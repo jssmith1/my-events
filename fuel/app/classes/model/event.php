@@ -75,7 +75,7 @@ class Model_Event extends Model
 	{
 		$val = Validation::forge($factory);
 		$val->add_field('title', 'Title', 'required|max_length[255]');
-		$val->add_field('description', 'Description', 'required');
+		//$val->add_field('description', 'Description', 'required');
 		$val->add_field('start', 'Start', 'required');
 		$val->add_field('end', 'End', 'required');
 		$val->add_field('type', 'Type', 'required');

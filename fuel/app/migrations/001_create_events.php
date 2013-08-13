@@ -9,7 +9,7 @@ class Create_events
 		\DBUtil::create_table('events', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'title' => array('constraint' => 255, 'type' => 'varchar'),
-			'description' => array('type' => 'text'),
+			'description' => array('type' => 'text', 'null' => true),
 			'start' => array('type' => 'datetime'),
 			'end' => array('type' => 'datetime'),
 			'user_id' => array('constraint' => 11, 'type' => 'int'),

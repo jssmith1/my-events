@@ -207,7 +207,7 @@ class Controller_Events extends Controller_Admin
 			if (Input::method() == 'POST')
 			{
 				$event->title = $val->validated('title');
-				$event->description = $val->validated('description');
+				//$event->description = $val->validated('description');
 				$event->start = $val->validated('start');
 				$event->end = $val->validated('end');
 				$event->user_id = $val->validated('user_id');
