@@ -79,6 +79,8 @@
 </div>
 
 
-<div id='calendar' class="clearfix"></div>
+<div class='clearfix'> </div>
+
+<div id='calendar'></div>
 
 <br>

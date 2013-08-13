@@ -10,10 +10,7 @@
 		'jquery-ui-1.10.3.custom.css',
 		'jquery-ui-timepicker-addon.css',
 		'app.css',
-		)); 
-
-		echo Asset::css('fullcalendar.print.css',
-							array('media' => 'print'));?>
+		)); ?>
 
 	<style>
 		body { margin: 50px; }
@@ -45,7 +42,6 @@
 
 </head>
 <body>
-	<div id="body">
 	<?php if ($current_user): ?>
 	<div class="navbar navbar-fixed-top">
 	    <div class="navbar-inner">
@@ -143,6 +139,5 @@
 	
 		</footer>
 	</div>
-</div>
 </body>
 </html>

@@ -22,13 +22,50 @@ table.key-table td{
 }
 
 @media print{
-	body, #content, .container {
-	width: 100%;
-	margin: 0;
-	zoom:80%;
+
+	body {
+		margin:0;
+		width:1920px;
+		height:582px;
 	}
 
+	.fc-event-skin {
+		background: none !important;
+		color: #000 !important;
+		}
+		
+	.fc-event-hori {
+		border-width: 0 0 1px 0 !important;
+		border-bottom-style: dotted !important;
+		border-bottom-color: #000 !important;
+		padding: 1px 0 0 0 !important;
+		}
+		
+	.fc-event-hori .fc-event-inner {
+		border-width: 0 !important;
+		padding: 0 1px !important;
+		}
+		
+	.fc-event-vert {
+		border-width: 0 0 0 1px !important;
+		border-left-style: dotted !important;
+		border-left-color: #000 !important;
+		padding: 0 1px 0 0 !important;
+		}
+		
+	.fc-event-vert .fc-event-inner {
+		border-width: 0 !important;
+		padding: 1px 0 !important;
+		}
+		
+	.fc-event-bg {
+		display: none !important;
+		}
+
+		
+		
 	.navbar, .fc-button, .btn, .filter, .no-print{
 		display:none;
 	}
+	
 }
