@@ -133,9 +133,9 @@
 <?php echo $content; ?>
 			</div>
 		</div>
-		<hr/>
+		<hr class="no-print"/>
 
-		<footer>
+		<footer class="no-print">
 	
 		</footer>
 	</div>

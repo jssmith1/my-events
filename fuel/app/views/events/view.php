@@ -59,7 +59,7 @@
 </ul>
 </div>
 </br>
-<div style="clear:both; margin-top: 50px">
+<div class='no-print' style="clear:both; margin-top: 50px">
 <?php echo Html::anchor('events/edit/'.$event->id, 'Edit'); ?> |
 <?php echo Html::anchor('events/delete/'.$event->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?> |
 <?php echo Html::anchor('events', 'Back'); ?>

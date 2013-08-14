@@ -1,6 +1,5 @@
 <h2>Listing Events <?php if (isset($employee)) echo "for $employee->first $employee->last";?>
 </h2>
-<br>
 
 <script type="text/javascript">
 	//set up the events to be displayed on the calendar
@@ -49,7 +48,7 @@
 }
 ?>
 
-<div>
+<div class="no-print">
 
 <span class="pull-left;">
 	<?php echo Html::anchor('events/create', 'Add new Event', array('class' => 'btn btn-success')); ?>
@@ -60,7 +59,7 @@
 ?>
 
 
-<div class="filter pull-right">
+<div class="filter pull-right no-print">
 
 	<?php echo Form::open(array("action" => Uri::create('events/index'),
 							"method" => "get",
@@ -78,9 +77,4 @@
 
 </div>
 
-
-<div class='clearfix'> </div>
-
 <div id='calendar' class="fc fc-ltr"></div>
-
-<br>

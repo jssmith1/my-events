@@ -23,7 +23,6 @@ table.key-table td{
 
 .container, .span12, .row{
 	max-width: 900px !important;
-
 	margin:0 auto !important;
 }
 
@@ -37,6 +36,15 @@ table.key-table td{
 	body{
 		width: 900px;
 		margin:0px !important;
+	}
+
+	h2{
+		font-size: 12px; 
+		line-height: 1;
+	}
+
+	#calendar{
+		font-size: 12px;
 	}
 	
 
