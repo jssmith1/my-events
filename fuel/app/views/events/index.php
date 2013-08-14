@@ -81,6 +81,6 @@
 
 <div class='clearfix'> </div>
 
-<div id='calendar'></div>
+<div id='calendar' class="fc fc-ltr"></div>
 
 <br>

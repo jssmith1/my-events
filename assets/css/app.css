@@ -21,13 +21,24 @@ table.key-table td{
 	margin-bottom: 20px;
 }
 
-@media print{
+.container, .span12, .row{
+	max-width: 900px !important;
+	overflow: auto !important;
+	margin:0 auto !important;
+}
 
-	body {
-		margin:0;
-		width:1920px;
-		height:582px;
+/*#calendar {
+		width: 900px;
+		margin: 0 auto;
+		/*text-align: center;
+		}*/
+
+@media print{
+	body{
+		width: 900px;
+		margin:0px !important;
 	}
+	
 
 	.fc-event-skin {
 		background: none !important;
