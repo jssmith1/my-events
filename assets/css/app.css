@@ -23,7 +23,7 @@ table.key-table td{
 
 .container, .span12, .row{
 	max-width: 900px !important;
-	overflow: auto !important;
+
 	margin:0 auto !important;
 }
 
